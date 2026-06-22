@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Woofly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="login-body">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="paws-container">
+            <i class="fa-solid fa-paw paw-1"></i>
+            <i class="fa-solid fa-paw paw-2"></i>
+            <i class="fa-solid fa-paw paw-3"></i>
+            <i class="fa-solid fa-paw paw-4"></i>
+            <i class="fa-solid fa-paw paw-5"></i>
+        </div>
+    </div>
+
+
+    <div class="login-left" data-aos="fade-right" data-aos-duration="1000">
+        <img src="images/login.webp" alt="Cute dog playing">
+        <div class="login-overlay">
+            <h1>Join Our Pack!</h1>
+            <p>Sign up to start managing your pet's health, booking appointments, and becoming part of the Woofly family.</p>
+        </div>
+    </div>
+
+    <div class="login-right" data-aos="fade-left" data-aos-duration="1000" style="overflow-y: auto;">
+        <div class="glass-panel" style="margin: 20px 0;">
+            <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <a href="index.html" class="logo">
+                <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+            </a>
+            
+            <form id="signup-form">
+                <div class="role-selection-wrapper">
+                    <div class="role-toggle-container">
+                        <input type="radio" id="role-customer" name="role" value="customer" checked>
+                        <input type="radio" id="role-admin" name="role" value="admin">
+                        <div class="role-toggle-slider"></div>
+                        <label for="role-customer" class="role-label">
+                            <i class="fa-solid fa-user"></i> Customer
+                        </label>
+                        <label for="role-admin" class="role-label">
+                            <i class="fa-solid fa-user-shield"></i> Admin
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%;">Create Account</button>
+                
+                <div style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+                    Already have an account? <a href="login.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Log in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Handle routing after signup
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            if(name) {
+                localStorage.setItem('loggedInName', name);
+            }
+            
+            // Simple animation before redirect
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Creating...';
+            btn.style.opacity = '0.8';
+
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 800);
+        });
+    </script>
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

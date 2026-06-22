@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Woofly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="paws-container">
+            <i class="fa-solid fa-paw paw-1"></i>
+            <i class="fa-solid fa-paw paw-2"></i>
+            <i class="fa-solid fa-paw paw-3"></i>
+            <i class="fa-solid fa-paw paw-4"></i>
+            <i class="fa-solid fa-paw paw-5"></i>
+        </div>
+    </div>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+        </a>
+                <div class="hamburger" id="hamburger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- 1. Page Header -->
+    <header class="page-header" data-aos="fade-down">
+        <h1>Get In Touch</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Contact Us</span>
+        </div>
+    </header>
+
+    <!-- 2. Contact Information Cards -->
+    <section class="grid-2" style="padding-top: 0;" data-aos="fade-up">
+        <div class="grid-3">
+            <div class="card" style="padding: 30px;">
+                <i class="fa-solid fa-location-dot" style="font-size: 2rem;"></i>
+                <h3 style="font-size: 1.2rem;">Our Location</h3>
+                <p>123 Pet Street, New York<br>NY 10001, USA</p>
+            </div>
+            <div class="card" style="padding: 30px;">
+                <i class="fa-solid fa-phone" style="font-size: 2rem;"></i>
+                <h3 style="font-size: 1.2rem;">Phone Number</h3>
+                <p>+1 234 567 8900<br>+1 987 654 3210</p>
+            </div>
+            <div class="card" style="padding: 30px;">
+                <i class="fa-solid fa-envelope" style="font-size: 2rem;"></i>
+                <h3 style="font-size: 1.2rem;">Email Address</h3>
+                <p>hello@woofly.com<br>support@woofly.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Contact Form Block -->
+    <section class="img-text-block grid-2" style="background-color: var(--bg-light);">
+        <div>
+            <img src="images/contact.webp" alt="Contact Us">
+        </div>
+        <div class="form-container" style="box-shadow: none; padding: 20px;">
+            <h2 style="font-family: 'Fredoka'; font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;">Send Us a Message</h2>
+            <form action="#">
+                <div class="grid-2" style="gap: 20px;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="How can we help?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 4. Business Hours -->
+    <section data-aos="fade-up">
+        <h2 class="section-title">Business Hours</h2>
+        <p class="section-subtitle">We are open 7 days a week to provide the best care for your pets.</p>
+        <div style="max-width: 600px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
+                <span style="font-weight: 500;">Monday - Friday</span>
+                <span style="color: var(--primary-color); font-weight: 600;">8:00 AM - 8:00 PM</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px;">
+                <span style="font-weight: 500;">Saturday</span>
+                <span style="color: var(--primary-color); font-weight: 600;">9:00 AM - 6:00 PM</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-weight: 500;">Sunday</span>
+                <span style="color: var(--primary-color); font-weight: 600;">10:00 AM - 4:00 PM</span>
+            </div>
+            <div style="margin-top: 20px; text-align: center; color: var(--text-gray); font-size: 0.9rem;">
+                *Emergency veterinary services are available 24/7.
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Google Map -->
+    <section style="padding: 0; line-height: 0;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1714574972323!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="404.html" class="logo" style="margin-bottom: 15px;">
+                    <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+                </a>
+                <p>We provide the best care for your lovable pets. From grooming to veterinary services, your pets are in safe hands with us.</p>
+                <div class="social-links">
+                    <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="blog.html">Our Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="404.html">Contact Us</a></li>
+                    <li><a href="404.html">FAQ</a></li>
+                    <li><a href="404.html">Privacy Policy</a></li>
+                    <li><a href="404.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: var(--primary-color); width: 20px;"></i> 123 Pet Street, New York, NY</p>
+                <p style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: var(--primary-color); width: 20px;"></i> +1 234 567 8900</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--primary-color); width: 20px;"></i> hello@woofly.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Woofly Pet Care. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Sticky Navbar
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.classList.toggle('sticky', window.scrollY > 50);
+            }
+        });
+    </script>
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

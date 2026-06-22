@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Woofly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="paws-container">
+            <i class="fa-solid fa-paw paw-1"></i>
+            <i class="fa-solid fa-paw paw-2"></i>
+            <i class="fa-solid fa-paw paw-3"></i>
+            <i class="fa-solid fa-paw paw-4"></i>
+            <i class="fa-solid fa-paw paw-5"></i>
+        </div>
+    </div>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+        </a>
+                <div class="hamburger" id="hamburger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- 1. Page Header -->
+    <header class="page-header" data-aos="fade-down">
+        <h1>Pet Care Blog</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Blog</span>
+        </div>
+    </header>
+
+    <!-- 2. Featured Post -->
+    <section class="img-text-block grid-2">
+        <div>
+            <img src="images/blog.webp" alt="Featured Blog Post">
+        </div>
+        <div class="img-text-content">
+            <span style="color: var(--primary-color); font-weight: 600; margin-bottom: 10px; display: block;">Featured Post</span>
+            <h2>Top 10 Must-Have Toys for Your New Puppy</h2>
+            <p>Bringing a new puppy home is exciting, but it also means you need the right gear. From chew toys that protect your furniture to puzzle games that keep their minds sharp, discover our top recommendations.</p>
+            <a href="404.html" class="btn-primary" style="margin-top: 15px;">Read Full Article</a>
+        </div>
+    </section>
+
+    <!-- 3. Categories -->
+    <section style="padding: 20px 5%; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 10px 25px; font-size: 1rem;">All</button>
+        <button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 10px 25px; font-size: 1rem; background: var(--white); color: var(--text-dark); border: 2px solid var(--primary-color);">Health</button>
+        <button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 10px 25px; font-size: 1rem; background: var(--white); color: var(--text-dark); border: 2px solid var(--primary-color);">Training</button>
+        <button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 10px 25px; font-size: 1rem; background: var(--white); color: var(--text-dark); border: 2px solid var(--primary-color);">Grooming</button>
+        <button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 10px 25px; font-size: 1rem; background: var(--white); color: var(--text-dark); border: 2px solid var(--primary-color);">Nutrition</button>
+    </section>
+
+    <!-- 4. Blog Post Grid -->
+    <section data-aos="fade-up">
+        <div class="grid-3">
+            <div class="blog-card">
+                <img src="images/bird.webp" alt="Blog 1">
+                <div class="blog-content">
+                    <span class="blog-date">March 12, 2026</span>
+                    <h3>5 Ways to Keep Your Dog Active Indoors</h3>
+                    <p>Discover creative ways to exercise your dog when the weather is bad.</p>
+                    <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/cat.webp" alt="Blog 2">
+                <div class="blog-content">
+                    <span class="blog-date">March 08, 2026</span>
+                    <h3>The Ultimate Guide to Pet Nutrition</h3>
+                    <p>What should you really be feeding your pets? Our vets break it down.</p>
+                    <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/rabbit.webp" alt="Blog 3">
+                <div class="blog-content">
+                    <span class="blog-date">March 01, 2026</span>
+                    <h3>Understanding Dog Body Language</h3>
+                    <p>Learn how to read your dog's subtle cues to understand their feelings.</p>
+                    <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/contact.webp" alt="Blog 4">
+                <div class="blog-content">
+                    <span class="blog-date">Feb 20, 2026</span>
+                    <h3>Why Microchipping is Essential</h3>
+                    <p>The benefits of microchipping and how it keeps your pet safe.</p>
+                    <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/small_dog.webp" alt="Blog 5">
+                <div class="blog-content">
+                    <span class="blog-date">Feb 15, 2026</span>
+                    <h3>Grooming Tips for Long-Haired Cats</h3>
+                    <p>Prevent mats and keep your feline friend's coat looking gorgeous.</p>
+                    <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/hero.webp" alt="Blog 6">
+                <div class="blog-content">
+                    <span class="blog-date">Feb 02, 2026</span>
+                    <h3>Preparing Your Pet for a New Baby</h3>
+                    <p>Step-by-step guide to introducing your dog to your newborn safely.</p>
+                    <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Newsletter Subscribe -->
+    <section style="background: var(--primary-color); color: var(--white); text-align: center; border-radius: var(--border-radius); margin: 0 5% 80px;" data-aos="fade-up">
+        <h2 class="section-title">Subscribe to Our Newsletter</h2>
+        <p class="section-subtitle">Get the latest pet care tips and exclusive offers straight to your inbox.</p>
+        <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px;">
+            <input type="email" placeholder="Enter your email address" style="flex: 1; padding: 15px; border-radius: 30px; border: 1px solid #ddd; outline: none; font-family: 'Outfit';">
+            <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="404.html" class="logo" style="margin-bottom: 15px;">
+                    <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+                </a>
+                <p>We provide the best care for your lovable pets. From grooming to veterinary services, your pets are in safe hands with us.</p>
+                <div class="social-links">
+                    <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="blog.html">Our Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="404.html">Contact Us</a></li>
+                    <li><a href="404.html">FAQ</a></li>
+                    <li><a href="404.html">Privacy Policy</a></li>
+                    <li><a href="404.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: var(--primary-color); width: 20px;"></i> 123 Pet Street, New York, NY</p>
+                <p style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: var(--primary-color); width: 20px;"></i> +1 234 567 8900</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--primary-color); width: 20px;"></i> hello@woofly.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Woofly Pet Care. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Sticky Navbar
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.classList.toggle('sticky', window.scrollY > 50);
+            }
+        });
+    </script>
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | Woofly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="paws-container">
+            <i class="fa-solid fa-paw paw-1"></i>
+            <i class="fa-solid fa-paw paw-2"></i>
+            <i class="fa-solid fa-paw paw-3"></i>
+            <i class="fa-solid fa-paw paw-4"></i>
+            <i class="fa-solid fa-paw paw-5"></i>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="index.html" class="logo">
+            <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+        </a>
+        
+        <ul class="nav-menu">
+            <li><a href="customer-dashboard.html" ><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="customer-appointments.html"><i class="fa-solid fa-calendar-check"></i> My Appointments</a></li>
+            <li><a href="customer-pets.html"><i class="fa-solid fa-paw"></i> My Pets</a></li>
+            <li><a class="active" href="customer-records.html"><i class="fa-solid fa-file-medical"></i> Medical Records</a></li>
+            <li><a href="customer-notifications.html"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+            <li><a href="customer-settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+        </ul>
+        
+        <a href="login.html" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+                <header class="top-header">
+            <div class="dashboard-hamburger" id="dash-hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--text-gray);"></i>
+                <input type="text" placeholder="Search services, records...">
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-info" style="text-align: right;">
+                    <h4 id="profile-name">Sarah Johnson</h4>
+                    <p>Customer</p>
+                </div>
+                <img id="profile-img" src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=ffb800&color=fff" alt="Customer Profile">
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Medical Records</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Pet Name</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Veterinarian</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Max</strong></td>
+                            <td>Sep 10, 2023</td>
+                            <td>Annual Vaccination</td>
+                            <td>Dr. Smith</td>
+                            <td><a href="404.html" style="color: var(--primary-color);"><i class="fa-solid fa-download"></i> PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Luna</strong></td>
+                            <td>Aug 22, 2023</td>
+                            <td>Initial Checkup</td>
+                            <td>Dr. Davis</td>
+                            <td><a href="404.html" style="color: var(--primary-color);"><i class="fa-solid fa-download"></i> PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Max</strong></td>
+                            <td>Jan 15, 2023</td>
+                            <td>Dental Cleaning</td>
+                            <td>Dr. Smith</td>
+                            <td><a href="404.html" style="color: var(--primary-color);"><i class="fa-solid fa-download"></i> PDF</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+</div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedInName = localStorage.getItem('loggedInName');
+            if (loggedInName) {
+                document.getElementById('profile-name').textContent = loggedInName;
+                document.getElementById('profile-img').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(loggedInName)}&background=ffb800&color=fff`;
+                
+                const firstName = loggedInName.split(' ')[0];
+                document.getElementById('welcome-message').textContent = `Welcome back, ${firstName}!`;
+            }
+        });
+    </script>
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

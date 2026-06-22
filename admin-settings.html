@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Woofly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="paws-container">
+            <i class="fa-solid fa-paw paw-1"></i>
+            <i class="fa-solid fa-paw paw-2"></i>
+            <i class="fa-solid fa-paw paw-3"></i>
+            <i class="fa-solid fa-paw paw-4"></i>
+            <i class="fa-solid fa-paw paw-5"></i>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="index.html" class="logo">
+            <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+        </a>
+        
+        <ul class="nav-menu">
+            <li><a href="admin-dashboard.html" ><i class="fa-solid fa-house"></i> Overview</a></li>
+            <li><a href="admin-customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+            <li><a href="admin-appointments.html"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
+            <li><a href="admin-pets.html"><i class="fa-solid fa-paw"></i> Pets Database</a></li>
+            <li><a href="admin-reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+            <li><a class="active" href="admin-settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+        </ul>
+        
+        <a href="login.html" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+                <header class="top-header">
+            <div class="dashboard-hamburger" id="dash-hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--text-gray);"></i>
+                <input type="text" placeholder="Search customers, pets, or appointments...">
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-info" style="text-align: right;">
+                    <h4 id="profile-name">Admin User</h4>
+                    <p>Manager</p>
+                </div>
+                <img id="profile-img" src="https://ui-avatars.com/api/?name=Admin+User&background=f17a7e&color=fff" alt="Admin Profile">
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Clinic Settings</h2>
+                </div>
+                <div class="grid-2">
+                    <div style="background:white; border-radius:10px; padding:30px; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+                        <h3>Clinic Information</h3>
+                        <div class="input-group" style="margin-top:20px; margin-bottom:20px; text-align:left;">
+                            <label style="display:block; font-weight:600; margin-bottom:5px;">Clinic Name</label>
+                            <input type="text" value="Woofly Pet Care" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px; box-sizing:border-box;">
+                        </div>
+                        <div class="input-group" style="margin-bottom:20px; text-align:left;">
+                            <label style="display:block; font-weight:600; margin-bottom:5px;">Contact Email</label>
+                            <input type="email" value="admin@woofly.com" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px; box-sizing:border-box;">
+                        </div>
+                        <div class="input-group" style="margin-bottom:20px; text-align:left;">
+                            <label style="display:block; font-weight:600; margin-bottom:5px;">Support Phone</label>
+                            <input type="tel" value="+1 234 567 8900" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px; box-sizing:border-box;">
+                        </div>
+                        <button onclick="window.location.href='404.html'" class="btn-primary" style="width:100%;">Save Changes</button>
+                    </div>
+                    
+                    <div style="background:white; border-radius:10px; padding:30px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:left;">
+                        <h3>Operating Hours</h3>
+                        <div style="margin-top:20px; margin-bottom:15px; display:flex; justify-content:space-between; align-items:center;">
+                            <strong>Monday - Friday</strong>
+                            <span>08:00 AM - 08:00 PM</span>
+                        </div>
+                        <div style="margin-bottom:15px; display:flex; justify-content:space-between; align-items:center;">
+                            <strong>Saturday</strong>
+                            <span>09:00 AM - 05:00 PM</span>
+                        </div>
+                        <div style="margin-bottom:30px; display:flex; justify-content:space-between; align-items:center;">
+                            <strong>Sunday</strong>
+                            <span style="color:#dc3545;">Closed</span>
+                        </div>
+                        
+                        <button onclick="window.location.href='404.html'" class="btn-primary" style="background:var(--text-gray); width:100%;">Edit Hours</button>
+                    </div>
+                </div>
+            </div>
+</div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedInName = localStorage.getItem('loggedInName');
+            if (loggedInName) {
+                document.getElementById('profile-name').textContent = loggedInName;
+                document.getElementById('profile-img').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(loggedInName)}&background=f17a7e&color=fff`;
+            }
+        });
+    </script>
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

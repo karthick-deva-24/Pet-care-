@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | Woofly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="paws-container">
+            <i class="fa-solid fa-paw paw-1"></i>
+            <i class="fa-solid fa-paw paw-2"></i>
+            <i class="fa-solid fa-paw paw-3"></i>
+            <i class="fa-solid fa-paw paw-4"></i>
+            <i class="fa-solid fa-paw paw-5"></i>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="index.html" class="logo">
+            <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+        </a>
+        
+        <ul class="nav-menu">
+            <li><a href="customer-dashboard.html" ><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="customer-appointments.html"><i class="fa-solid fa-calendar-check"></i> My Appointments</a></li>
+            <li><a href="customer-pets.html"><i class="fa-solid fa-paw"></i> My Pets</a></li>
+            <li><a href="customer-records.html"><i class="fa-solid fa-file-medical"></i> Medical Records</a></li>
+            <li><a class="active" href="customer-notifications.html"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+            <li><a href="customer-settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+        </ul>
+        
+        <a href="login.html" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+                <header class="top-header">
+            <div class="dashboard-hamburger" id="dash-hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--text-gray);"></i>
+                <input type="text" placeholder="Search services, records...">
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-info" style="text-align: right;">
+                    <h4 id="profile-name">Sarah Johnson</h4>
+                    <p>Customer</p>
+                </div>
+                <img id="profile-img" src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=ffb800&color=fff" alt="Customer Profile">
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Notifications</h2>
+                    <a href="404.html" class="view-all">Mark all as read</a>
+                </div>
+                <div style="background:white; border-radius:10px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.05); margin-bottom:15px; border-left:4px solid var(--primary-color);">
+                    <h4 style="margin-bottom:5px;">Upcoming Appointment</h4>
+                    <p style="color:var(--text-gray); font-size:0.9rem;">Max has a General Checkup appointment in 2 days. Please arrive 10 minutes early.</p>
+                </div>
+                <div style="background:white; border-radius:10px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.05); margin-bottom:15px;">
+                    <h4 style="margin-bottom:5px;">Vaccination Due</h4>
+                    <p style="color:var(--text-gray); font-size:0.9rem;">Luna is due for her annual booster shots next month. Click to book an appointment.</p>
+                </div>
+                <div style="background:white; border-radius:10px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+                    <h4 style="margin-bottom:5px;">Welcome to Woofly!</h4>
+                    <p style="color:var(--text-gray); font-size:0.9rem;">Your account has been successfully created. You can now add pets and book services.</p>
+                </div>
+            </div>
+</div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedInName = localStorage.getItem('loggedInName');
+            if (loggedInName) {
+                document.getElementById('profile-name').textContent = loggedInName;
+                document.getElementById('profile-img').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(loggedInName)}&background=ffb800&color=fff`;
+                
+                const firstName = loggedInName.split(' ')[0];
+                document.getElementById('welcome-message').textContent = `Welcome back, ${firstName}!`;
+            }
+        });
+    </script>
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .error-code {
+            font-size: 150px;
+            font-weight: 800;
+            color: #ff6b6b;
+            margin: 0;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+            animation: bounce 2s infinite ease-in-out;
+            display: inline-block;
+        }
+
+        .error-code span {
+            display: inline-block;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .error-code span:nth-child(2) {
+            animation-delay: 0.2s;
+            color: #4ecdc4;
+        }
+
+        .error-code span:nth-child(3) {
+            animation-delay: 0.4s;
+            color: #ffe66d;
+        }
+
+        .error-message {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        .error-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.7s;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            opacity: 0;
+            animation: slideUp 1s forwards 0.9s;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-prev {
+            background-color: #6c757d;
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+        }
+
+        .btn-prev:hover {
+            background-color: #5a6268;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.6);
+        }
+
+        .btn-home {
+            background-color: #ff6b6b;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-home:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Background live animations */
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 107, 107, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+
+        .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+        .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; background: rgba(78, 205, 196, 0.2); }
+        .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+        .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; background: rgba(255, 230, 109, 0.2); }
+        .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+        .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; background: rgba(78, 205, 196, 0.2); }
+        .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+        .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+        .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; background: rgba(255, 230, 109, 0.2); }
+        .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+        @keyframes animate {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="circles">
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <div class="error-container">
+        <h1 class="error-code"><span>4</span><span>0</span><span>4</span></h1>
+        <div class="error-message">Oops! Page Not Found</div>
+        <div class="error-description">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track!
+        </div>
+        <div class="button-group">
+            <button class="btn btn-prev" onclick="window.history.back()">Back to Previous Page</button>
+            <a href="index.html" class="btn btn-home">Back to Home</a>
+        </div>
+    </div>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+

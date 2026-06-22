@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Woofly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="login-body">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="paws-container">
+            <i class="fa-solid fa-paw paw-1"></i>
+            <i class="fa-solid fa-paw paw-2"></i>
+            <i class="fa-solid fa-paw paw-3"></i>
+            <i class="fa-solid fa-paw paw-4"></i>
+            <i class="fa-solid fa-paw paw-5"></i>
+        </div>
+    </div>
+
+
+    <div class="login-left" data-aos="fade-right" data-aos-duration="1000">
+        <img src="images/login.webp" alt="Cute dog with glasses">
+        <div class="login-overlay">
+            <h1>Welcome Back!</h1>
+            <p>Log in to access your pet's records, schedule appointments, and explore our premium pet care community.</p>
+        </div>
+    </div>
+
+    <div class="login-right" data-aos="fade-left" data-aos-duration="1000">
+        <div class="glass-panel">
+            <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <a href="index.html" class="logo">
+                <img src="images/stackly_logo_orange.png" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;">
+            </a>
+            
+            <div class="social-login">
+                <button onclick="window.location.href='404.html'" class="social-btn"><i class="fa-brands fa-google" style="color: #DB4437;"></i> Google</button>
+                <button onclick="window.location.href='404.html'" class="social-btn"><i class="fa-brands fa-facebook" style="color: #4267B2;"></i> Facebook</button>
+            </div>
+            
+            <div class="divider">or continue with email</div>
+
+            <form id="login-form">
+                <div class="role-selection-wrapper">
+                    <div class="role-toggle-container">
+                        <input type="radio" id="role-customer" name="role" value="customer" checked>
+                        <input type="radio" id="role-admin" name="role" value="admin">
+                        <div class="role-toggle-slider"></div>
+                        <label for="role-customer" class="role-label">
+                            <i class="fa-solid fa-user"></i> Customer
+                        </label>
+                        <label for="role-admin" class="role-label">
+                            <i class="fa-solid fa-user-shield"></i> Admin
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Log In</button>
+                
+                <div class="login-links">
+                    <label style="display:flex; align-items:center; gap:5px; cursor:pointer;">
+                        <input type="checkbox" style="width:auto;"> Remember me
+                    </label>
+                    <a href="404.html">Forgot password?</a>
+                </div>
+                <div style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+                    Don't have an account? <a href="signup.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Handle routing based on role selection
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedRole = document.querySelector('input[name="role"]:checked').value;
+            
+            const email = document.getElementById('email').value;
+            if(email) {
+                const nameFromEmail = email.split('@')[0];
+                const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+                localStorage.setItem('loggedInName', formattedName);
+            }
+            
+            // Simple animation before redirect
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Logging in...';
+            btn.style.opacity = '0.8';
+
+            setTimeout(() => {
+                if(selectedRole === 'admin') {
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    window.location.href = 'customer-dashboard.html';
+                }
+            }, 800);
+        });
+    </script>
+    <!-- Preloader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script>
+    // Public pages hamburger
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Dashboard hamburger
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    if (dashHamburger && sidebar) {
+        dashHamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
